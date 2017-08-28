@@ -21,7 +21,7 @@ func main() {
 		 {(rand.Float64()*2)-1},
 		 {(rand.Float64()*2)-1},
 	 }
-	var result[4][3]float64
+	var result[4][1]float64
 
 	fmt.Println(inData)
 	fmt.Println(outData)
