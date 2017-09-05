@@ -5,7 +5,7 @@ import "math/rand"
 
 func nonlin(x[4][1]float64, deriv bool) [4][1]float64 {
 	if deriv == true {
-		return subScalar(1.0, x)
+		return dot(x, subScalar(1.0, x))
 	} else {
 		return x
 	}
