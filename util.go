@@ -1,5 +1,7 @@
 package main
 
+import "math"
+
 func dot(x[4][1]float64, y[4][1]float64) [4][1]float64{
 	var result[4][1]float64
 
@@ -30,6 +32,17 @@ func matrixVector(inData[4][3]float64, weights[3][1]float64) [4][1]float64{
         }
 	return result
 }
+func subMatrix(matrixA[4][1] float64, matrixB[4][1]float64) [4][1]float64{
+	var result[4][1]float64
+
+	for i := 0; i<4; i++ {
+		for j := 0; j<1; j++ {
+			result[i][j] = matrixA[i][j] - matrixB[i][j]
+		}
+	}
+
+	return result
+}
 
 func subScalar(scalar float64, inData[4][1]float64) [4][1]float64{
 	var result[4][1]float64
@@ -37,6 +50,17 @@ func subScalar(scalar float64, inData[4][1]float64) [4][1]float64{
 	for i:= 0; i<4; i++ {
 		for j :=0; j<1; j++ {
 			result[i][j] = scalar-inData[i][j]
+		}
+	}
+	return result
+}
+
+func sigmoid(inData[4][1]float64) [4][1]float64{
+	var result[4][1]float64
+
+	for i:=0; i<4; i++ {
+		for j := 0; j<1; j++ {
+			result[i][j] = 1/(1+math.Exp(-inData[i][j]))
 		}
 	}
 	return result
