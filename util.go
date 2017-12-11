@@ -33,6 +33,37 @@ func matrixVector(inData[4][3]float64, weights[3][1]float64) [4][1]float64{
 	return result
 }
 
+func transposeMatrix(matrixA[4][3]float64) [3][4]float64{
+	var result[3][4]float64
+
+	for i := 0; i<4; i++ {
+		for j := i+1; j<4; j++ {
+			result[i][j] = matrixA[j][i]
+		}
+	}
+	return result
+}
+
+func updateWeights(weights[3][1]float64, inData[3][4]float64, delta[4][1]float64) [3][1]float64{
+	var tmp[3][4]float64
+	var result[3][1]float64
+
+	for i := 0; i<3; i++ {
+            for j := 0; j<4; j++ {
+                tmp[i][j] = inData[i][j]*delta[j][0]
+             }
+        }
+
+	for i := 0; i<3; i++ {
+	    var sum float64
+            for j := 0; j<4; j++ {
+                sum += tmp[i][j]
+             }
+	     result[i][0] =  sum
+        }
+	return result
+}
+
 func subMatrix(matrixA[4][1] float64, matrixB[4][1]float64) [4][1]float64{
 	var result[4][1]float64
 

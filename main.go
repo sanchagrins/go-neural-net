@@ -56,8 +56,10 @@ func main() {
 		l1_delta := elementMult(l1_error, nonlin(l1, true))
 		fmt.Println("l1_delta: ", l1_delta)
 
+		fmt.Println("l0: ", l0)
+		fmt.Println("transpose(l0): ", transposeMatrix(l0))
 		// Update weights
-		//syn0 += matrixVector(l0, l1_delta)
+		syn0 = updateWeights(syn0, transposeMatrix(l0), l1_delta)
 	}
 
 	fmt.Println("outData", outData)
