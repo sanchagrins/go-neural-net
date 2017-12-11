@@ -53,7 +53,8 @@ func main() {
 		fmt.Println("l1_error: ", l1_error)
 
 		// Multiply how error by the derivative of the sigmoid of l1
-		//l1_delta = l1_error * nonlin(l1, true)
+		l1_delta := elementMult(l1_error, nonlin(l1, true))
+		fmt.Println("l1_delta: ", l1_delta)
 
 		// Update weights
 		//syn0 += matrixVector(l0, l1_delta)
