@@ -57,7 +57,6 @@ func main() {
 
 		// Update the weights
 		syn0 = updateWeights(syn0, l0T, l1_delta)
-		fmt.Println("Updated weight: ", syn0)
 	}
 
 	fmt.Println("Results after training: ", l1)
