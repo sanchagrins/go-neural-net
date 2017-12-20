@@ -123,7 +123,7 @@ func elementMult(matrixA[][]float64, matrixB[][]float64) [][]float64{
 // subScalar subtracts a scalar from an input vector
 func subScalar(scalar float64, inData[][]float64) [][]float64{
 	result := make([][]float64, len(inData))
-	for i := range(inData[0]) {
+	for i := range inData {
 		result[i] = make([]float64, len(inData[0]))
 	}
 
