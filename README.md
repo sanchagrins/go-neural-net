@@ -26,12 +26,14 @@ To run the application simply execute the `go run` command:
 The first layer of the network is specified by the input data `var l0`, which is a 2D array representation of the following 4x3 matrix, and the output data `var outData` as the 4x1 matrix:
 
 <center>
+    
 Input | Output
 ---| --- 
 0 0 1 | 0
 0 1 1 | 0
 1 0 1 | 1
 1 1 1 | 1
+
 </center>
 
 
